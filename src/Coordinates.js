@@ -15,7 +15,10 @@ Lyngk.Coordinates = function (c, l) {
     }
 
     this.is_string = function () {
-
-        return coordinatesToTest;
+        if (typeof (coordinatesToTest) === 'string') {
+            return coordinatesToTest;
+        } else {
+            return 'invalid';
+        }
     }
 };

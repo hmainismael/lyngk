@@ -27,3 +27,9 @@ LyngkTestCase.prototype.testStory3 = function () {
 
     assertString(coordinates.is_string());
 }
+
+LyngkTestCase.prototype.testStory4 = function () {
+    var coordinates = new Lyngk.Coordinates('A', 1);
+
+    assertString(coordinates.is_string());
+}
