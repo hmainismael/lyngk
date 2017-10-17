@@ -49,3 +49,9 @@ LyngkTestCase.prototype.testStory6 = function () {
     if (coordinates.is_valid() == true && coordinates2.is_valid() == true)
         assertNotEquals(coordinates.hash(), coordinates2.hash());
 }
+
+LyngkTestCase.prototype.testStory7 = function () {
+    var intersection = new Lyngk.Intersection('A',3);
+
+    assertEquals(intersection.getState(),0);
+}
