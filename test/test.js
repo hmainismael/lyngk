@@ -21,3 +21,9 @@ LyngkTestCase.prototype.testStory2 = function () {
     }
     assertEquals(43,numberCoordinates);
 }
+
+LyngkTestCase.prototype.testStory3 = function () {
+    var coordinates = new Lyngk.Coordinates('A', 1);
+
+    assertString(coordinates.is_string());
+}

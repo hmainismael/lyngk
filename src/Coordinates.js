@@ -6,9 +6,11 @@ Lyngk.Coordinates = function (c, l) {
     var coordinatesToTest = c.toUpperCase() + l;
 
     this.is_valid = function () {
-        if (validCoordinates.indexOf(coordinatesToTest) == -1)
-            return false;
-        else
-            return true;
+        if (typeof (coordinatesToTest) === 'string') {
+            if (validCoordinates.indexOf(coordinatesToTest) == -1)
+                return false;
+            else
+                return true;
+        }
     }
 };
