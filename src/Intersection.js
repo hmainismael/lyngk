@@ -8,6 +8,8 @@ Lyngk.Intersection = function (c, l) {
     var piecesPosees = [];
 
     this.getState = function () {
+        if(etat >= Lyngk.State.FULL_STACK)
+            etat = Lyngk.State.FULL_STACK;
         return etat;
     }
 
