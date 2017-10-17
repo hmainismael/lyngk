@@ -21,4 +21,8 @@ Lyngk.Coordinates = function (c, l) {
             return 'invalid';
         }
     }
+
+    this.clone = function () {
+        return new Lyngk.Coordinates(c,l);
+    }
 };

@@ -41,3 +41,9 @@ LyngkTestCase.prototype.testStory5 = function () {
 
     assertEquals(coordinates.is_string(), coordinatesCloned.is_string());
 }
+
+LyngkTestCase.prototype.testStory6 = function () {
+    var coordinates = new Lyngk.Coordinates('A', 1);
+
+    assertTrue(coordinates.hash());
+}
