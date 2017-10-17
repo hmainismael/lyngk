@@ -9,4 +9,5 @@ Lyngk.Intersection = function (c, l) {
     this.getState = function () {
         return etat;
     }
+
 };
