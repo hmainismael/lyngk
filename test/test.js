@@ -43,7 +43,9 @@ LyngkTestCase.prototype.testStory5 = function () {
 }
 
 LyngkTestCase.prototype.testStory6 = function () {
-    var coordinates = new Lyngk.Coordinates('A', 1);
+    var coordinates = new Lyngk.Coordinates('A', 3);
+    var coordinates2 = new Lyngk.Coordinates('A', 4);
 
-    assertTrue(coordinates.hash());
+    if (coordinates.is_valid() == true && coordinates2.is_valid() == true)
+        assertNotEquals(coordinates.hash(), coordinates2.hash());
 }
