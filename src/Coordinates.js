@@ -13,4 +13,9 @@ Lyngk.Coordinates = function (c, l) {
                 return true;
         }
     }
+
+    this.is_string = function () {
+
+        return coordinatesToTest;
+    }
 };
