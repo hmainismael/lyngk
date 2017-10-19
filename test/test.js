@@ -88,3 +88,22 @@ LyngkTestCase.prototype.testStory10 = function () {
 
     assertEquals(intersection.getState(), Lyngk.State.FULL_STACK);
 }
+
+LyngkTestCase.prototype.testStory11 = function () {
+    var coordinates = new Lyngk.Coordinates(''),
+        validCoordinates = coordinates.getValidCoordinates(),
+        engine = new Lyngk.Engine(),
+        plateau,
+        i = 0,
+        nbIntersections = 0;
+
+    engine.init();
+    plateau = engin.getPlateau();
+
+    for (i = 0; i < Object.keys(plateau).length; i++) {
+        var stateIntersection = plateau[validCoordinates[i]].state;
+        assertEquals(stateIntersection, Lyngk.State.ONE_PIECE);
+        nbIntersections++;
+    }
+    assertEquals(nbIntersections, 43);
+}
