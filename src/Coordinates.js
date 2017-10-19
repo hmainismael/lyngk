@@ -29,4 +29,8 @@ Lyngk.Coordinates = function (c, l) {
     this.hash = function () {
         return validCoordinates.indexOf(coordinatesToTest);
     }
+
+    this.getValidCoordinates = function () {
+        return validCoordinates;
+    }
 };

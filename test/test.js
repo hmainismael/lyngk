@@ -98,7 +98,7 @@ LyngkTestCase.prototype.testStory11 = function () {
         nbIntersections = 0;
 
     engine.init();
-    plateau = engin.getPlateau();
+    plateau = engine.getPlateauInitial();
 
     for (i = 0; i < Object.keys(plateau).length; i++) {
         var stateIntersection = plateau[validCoordinates[i]].state;
