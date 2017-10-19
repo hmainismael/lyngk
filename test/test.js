@@ -136,9 +136,11 @@ LyngkTestCase.prototype.testStory12 = function () {
         assertEquals(stateIntersection, Lyngk.State.ONE_PIECE);
         nbIntersections++;
     }
-    if (nbEachColor.black == nbEachColor.ivory == nbEachColor.blue == nbEachColor.red == nbEachColor.green == 8 && nbEachColor.white == 3) {
+
+    if (nbEachColor.black == 8 && nbEachColor.ivory == 8 && nbEachColor.blue == 8 && nbEachColor.red == 8 &&nbEachColor.green == 8 && nbEachColor.white == 3) {
         repartitionColor = true;
     }
+
     assertTrue(repartitionColor);
     assertEquals(nbIntersections, 43);
 }

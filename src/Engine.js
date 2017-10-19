@@ -10,14 +10,28 @@ Lyngk.Engine = function () {
     this.init = function () {
         var i,
             j = 0,
+            nbIntersectionsRemplis = 0,
             coordinate = new Lyngk.Coordinates(''),
-            coordinatesValid = coordinate.getValidCoordinates();
+            coordinatesValid = coordinate.getValidCoordinates(),
+            nbCoordinatesValid = coordinatesValid.length,
+            colors = [Lyngk.Color.BLACK, Lyngk.Color.IVORY, Lyngk.Color.BLUE, Lyngk.Color.RED, Lyngk.Color.GREEN, Lyngk.Color.WHITE];
 
-        for (i = 0; i < coordinatesValid.length; i++) {
-            var intersection = new Lyngk.Intersection(coordinatesValid[i]);
-            intersection.setPiece(new Lyngk.Piece(Lyngk.Color.BLUE));
+        for (i = 0; i < colors.length; i++) {
+            var nbRepeatedColors = 0;
+            while (nbRepeatedColors < 8 && nbIntersectionsRemplis < nbCoordinatesValid) {
+                var coordinatesSplicedLength = coordinatesValid.length,
+                    indiceTab = Math.floor((Math.random() * coordinatesSplicedLength) + 0),
+                    c = coordinatesValid[indiceTab].charAt(0),
+                    l = coordinatesValid[indiceTab].charAt(1),
+                    intersection = new Lyngk.Intersection(c, l);
 
-            contentPlateauInitial[coordinatesValid[i]] = { state : intersection.getState() };
+                intersection.setPiece(new Lyngk.Piece(colors[j]));
+                contentPlateauInitial[coordinatesValid[indiceTab]] = {state: intersection.getState(), color: colors[j]};
+                nbRepeatedColors++;
+                nbIntersectionsRemplis++;
+                coordinatesValid.splice(indiceTab, 1);
+            }
+            j++;
         }
     }
 
