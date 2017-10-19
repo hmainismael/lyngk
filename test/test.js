@@ -107,3 +107,38 @@ LyngkTestCase.prototype.testStory11 = function () {
     }
     assertEquals(nbIntersections, 43);
 }
+
+LyngkTestCase.prototype.testStory12 = function () {
+    var coordinates = new Lyngk.Coordinates(''),
+        validCoordinates = coordinates.getValidCoordinates(),
+        engine = new Lyngk.Engine(),
+        plateau,
+        i = 0,
+        nbIntersections = 0,
+        repartitionColor = false,
+        nbEachColor = {'black': 0, 'ivory': 0, 'blue': 0, 'red': 0, 'green': 0, 'white': 0};
+
+    engine.init();
+    plateau = engine.getPlateauInitial();
+
+    for (i = 0; i < Object.keys(plateau).length; i++) {
+        var stateIntersection = plateau[validCoordinates[i]].state,
+            colorIntersection = plateau[validCoordinates[i]].color;
+        switch (colorIntersection) {
+            case 0 : nbEachColor.black ++; break;
+            case 1 : nbEachColor.ivory ++; break;
+            case 2 : nbEachColor.blue ++; break;
+            case 3 : nbEachColor.red ++; break;
+            case 4 : nbEachColor.green ++; break;
+            case 5 : nbEachColor.white ++; break;
+            default : ; break;
+        }
+        assertEquals(stateIntersection, Lyngk.State.ONE_PIECE);
+        nbIntersections++;
+    }
+    if (nbEachColor.black == nbEachColor.ivory == nbEachColor.blue == nbEachColor.red == nbEachColor.green == 8 && nbEachColor.white == 3) {
+        repartitionColor = true;
+    }
+    assertTrue(repartitionColor);
+    assertEquals(nbIntersections, 43);
+}
