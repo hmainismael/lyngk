@@ -185,7 +185,7 @@ LyngkTestCase.prototype.testStory15 = function () {
     plateau = engine.getPlateauInitial();
 
     var couleurA3 = plateau['A3'].getColor();
-    engine.move('A3','B3');
+    engine.move(plateau['A3'],plateau['B3']);
 
     assertEquals(plateau['A3'].getHauteur(), 0);
     assertEquals(plateau['B3'].getHauteur(), 2);

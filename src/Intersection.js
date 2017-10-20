@@ -25,4 +25,8 @@ Lyngk.Intersection = function (c, l) {
     this.getHauteur = function () {
         return piecesPosees.length;
     }
+
+    this.removePiece = function () {
+        piecesPosees.splice(piecesPosees.length-1, 1);
+    }
 };
