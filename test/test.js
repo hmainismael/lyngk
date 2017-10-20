@@ -101,7 +101,7 @@ LyngkTestCase.prototype.testStory11 = function () {
     plateau = engine.getPlateauInitial();
 
     for (i = 0; i < Object.keys(plateau).length; i++) {
-        var stateIntersection = plateau[validCoordinates[i]].state;
+        var stateIntersection = plateau[validCoordinates[i]].getState();
         assertEquals(stateIntersection, Lyngk.State.ONE_PIECE);
         nbIntersections++;
     }
@@ -122,8 +122,8 @@ LyngkTestCase.prototype.testStory12 = function () {
     plateau = engine.getPlateauInitial();
 
     for (i = 0; i < Object.keys(plateau).length; i++) {
-        var stateIntersection = plateau[validCoordinates[i]].state,
-            colorIntersection = plateau[validCoordinates[i]].color;
+        var stateIntersection = plateau[validCoordinates[i]].getState(),
+            colorIntersection = plateau[validCoordinates[i]].getColor();
         switch (colorIntersection) {
             case 0 : nbEachColor.black ++; break;
             case 1 : nbEachColor.ivory ++; break;

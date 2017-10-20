@@ -26,7 +26,7 @@ Lyngk.Engine = function () {
                     intersection = new Lyngk.Intersection(c, l);
 
                 intersection.setPiece(new Lyngk.Piece(colors[j]));
-                contentPlateauInitial[coordinatesValid[indiceTab]] = {state: intersection.getState(), color: colors[j]};
+                contentPlateauInitial[coordinatesValid[indiceTab]] = intersection;
                 nbRepeatedColors++;
                 nbIntersectionsRemplis++;
                 coordinatesValid.splice(indiceTab, 1);
@@ -38,4 +38,5 @@ Lyngk.Engine = function () {
     this.getPlateauInitial = function () {
         return contentPlateauInitial;
     }
+
 };
