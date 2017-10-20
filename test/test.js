@@ -157,3 +157,22 @@ LyngkTestCase.prototype.testStory13 = function () {
         assertEquals(plateau[keysPlateau[i]].getHauteur(), 1);
     }
 }
+
+LyngkTestCase.prototype.testStory14 = function () {
+    var engine = new Lyngk.Engine(),
+        plateau,
+        couleurPile = [];
+
+    engine.init();
+    plateau = engine.getPlateauInitial();
+
+    var keysPlateau = Object.keys(plateau);
+    for(var i in keysPlateau){
+        assertEquals(plateau[keysPlateau[i]].getHauteur(), 1);
+        couleurPile[keysPlateau[i]] = plateau[keysPlateau[i]].getColor();
+    }
+
+    for(var i in keysPlateau){
+        assertEquals(couleurPile[keysPlateau[i]], plateau[keysPlateau[i]].getColor());
+    }
+}
