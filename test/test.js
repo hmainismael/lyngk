@@ -144,3 +144,16 @@ LyngkTestCase.prototype.testStory12 = function () {
     assertTrue(repartitionColor);
     assertEquals(nbIntersections, 43);
 }
+
+LyngkTestCase.prototype.testStory13 = function () {
+    var engine = new Lyngk.Engine(),
+        plateau;
+
+    engine.init();
+    plateau = engine.getPlateauInitial();
+
+    var keysPlateau = Object.keys(plateau);
+    for(var i in keysPlateau){
+        assertEquals(plateau[keysPlateau[i]].getHauteur(), 1);
+    }
+}
