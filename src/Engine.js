@@ -40,9 +40,9 @@ Lyngk.Engine = function () {
     }
 
     this.move = function(intersectionDepart, intersectionArrivee) {
-        var colorIntersectionDepart = intersectionDepart.getColor();
-        intersectionDepart.removePiece();
-        intersectionArrivee.setPiece(new Lyngk.Piece(colorIntersectionDepart));
+        for(var i=0; i<intersectionDepart.getHauteur(); i++){
+            intersectionArrivee.setPiece(intersectionDepart.getPiecesPosees()[i]);
+        }
+        intersectionDepart.removePile();
     }
-
 };

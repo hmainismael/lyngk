@@ -26,7 +26,11 @@ Lyngk.Intersection = function (c, l) {
         return piecesPosees.length;
     }
 
-    this.removePiece = function () {
-        piecesPosees.splice(piecesPosees.length-1, 1);
+    this.removePile = function () {
+        piecesPosees = [];
+    }
+
+    this.getPiecesPosees = function () {
+        return piecesPosees;
     }
 };
