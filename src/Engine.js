@@ -40,11 +40,29 @@ Lyngk.Engine = function () {
     }
 
     this.move = function(intersectionDepart, intersectionArrivee) {
-        if(intersectionArrivee.getHauteur() != 0) {
+        var directionValid = this.checkDirection(intersectionDepart, intersectionArrivee);
+        if(intersectionArrivee.getHauteur() != 0 && directionValid) {
             for (var i = 0; i < intersectionDepart.getHauteur(); i++) {
                 intersectionArrivee.setPiece(intersectionDepart.getPiecesPosees()[i]);
             }
             intersectionDepart.removePile();
+        }
+    }
+
+    this.checkDirection = function(intersectionDepart, intersectionArrivee) {
+        var colonneIntersectionDepart = intersectionDepart.getIntersection().charAt(0);
+        var ligneIntersectionDepart = intersectionDepart.getIntersection().charAt(1);
+
+        var colonneIntersectionArrivee = intersectionArrivee.getIntersection().charAt(0);
+        var ligneIntersectionArrivee = intersectionArrivee.getIntersection().charAt(1);
+
+        var temp = colonneIntersectionArrivee.charCodeAt(0) - colonneIntersectionDepart.charCodeAt(0);
+        var temp2 = ligneIntersectionArrivee - ligneIntersectionDepart;
+
+        if(temp == temp2 || colonneIntersectionDepart == colonneIntersectionArrivee || ligneIntersectionArrivee == ligneIntersectionDepart){
+            return true;
+        } else {
+            return false;
         }
     }
 };

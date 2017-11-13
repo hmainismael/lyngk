@@ -6,6 +6,7 @@ Lyngk.Intersection = function (c, l) {
 
     var etat = Lyngk.State.VACANT;
     var piecesPosees = [];
+    var coordinatesT = new Lyngk.Coordinates(c,l);
 
     this.getState = function () {
         if(etat >= Lyngk.State.FULL_STACK)
@@ -32,5 +33,9 @@ Lyngk.Intersection = function (c, l) {
 
     this.getPiecesPosees = function () {
         return piecesPosees;
+    }
+
+    this.getIntersection = function () {
+        return coordinatesT.toString();
     }
 };

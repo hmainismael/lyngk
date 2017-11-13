@@ -33,4 +33,8 @@ Lyngk.Coordinates = function (c, l) {
     this.getValidCoordinates = function () {
         return validCoordinates;
     }
+
+    this.toString = function() {
+        return coordinatesToTest;
+    }
 };
