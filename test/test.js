@@ -238,3 +238,21 @@ LyngkTestCase.prototype.testStory18 = function () {
     assertEquals(plateau['C2'].getHauteur(), etatC2);
     assertEquals(plateau['B3'].getHauteur(), etatB3);
 }
+
+LyngkTestCase.prototype.testStory19 = function () {
+    var engine = new Lyngk.Engine(),
+        plateau;
+
+    engine.init();
+    plateau = engine.getPlateauInitial();
+
+    engine.move(plateau['I7'], plateau['H6']);
+    engine.move(plateau['H6'], plateau['H5']);
+
+    var etat = plateau['H5'].getHauteur();
+    engine.move(plateau['H5'], plateau['H8']);
+    engine.move(plateau['H5'], plateau['F8']);
+    engine.move(plateau['H5'], plateau['F3']);
+
+    assertEquals(plateau['H5'].getHauteur(), etat);
+}
