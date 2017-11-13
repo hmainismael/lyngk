@@ -40,9 +40,11 @@ Lyngk.Engine = function () {
     }
 
     this.move = function(intersectionDepart, intersectionArrivee) {
-        for(var i=0; i<intersectionDepart.getHauteur(); i++){
-            intersectionArrivee.setPiece(intersectionDepart.getPiecesPosees()[i]);
+        if(intersectionArrivee.getHauteur() != 0) {
+            for (var i = 0; i < intersectionDepart.getHauteur(); i++) {
+                intersectionArrivee.setPiece(intersectionDepart.getPiecesPosees()[i]);
+            }
+            intersectionDepart.removePile();
         }
-        intersectionDepart.removePile();
     }
 };
