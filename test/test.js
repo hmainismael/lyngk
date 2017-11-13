@@ -249,10 +249,10 @@ LyngkTestCase.prototype.testStory19 = function () {
     engine.move(plateau['I7'], plateau['H6']);
     engine.move(plateau['H6'], plateau['H5']);
 
-    var etat = plateau['H5'].getHauteur();
+    var etat = plateau['H5'].getState();
     engine.move(plateau['H5'], plateau['H8']);
     engine.move(plateau['H5'], plateau['F8']);
     engine.move(plateau['H5'], plateau['F3']);
 
-    assertEquals(plateau['H5'].getHauteur(), etat);
+    assertEquals(plateau['H5'].getState(), etat);
 }

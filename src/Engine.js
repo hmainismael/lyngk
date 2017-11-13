@@ -41,7 +41,8 @@ Lyngk.Engine = function () {
 
     this.move = function(intersectionDepart, intersectionArrivee) {
         var directionValid = this.checkDirection(intersectionDepart, intersectionArrivee);
-        if(intersectionArrivee.getHauteur() != 0 && directionValid) {
+        var possibilityMove = this.checkPossibilityMove(intersectionDepart, intersectionArrivee);
+        if(intersectionArrivee.getState() != Lyngk.State.VACANT && directionValid && possibilityMove) {
             for (var i = 0; i < intersectionDepart.getHauteur(); i++) {
                 intersectionArrivee.setPiece(intersectionDepart.getPiecesPosees()[i]);
             }
@@ -64,5 +65,30 @@ Lyngk.Engine = function () {
         } else {
             return false;
         }
+    }
+
+    this.checkPossibilityMove = function (a, b) {
+        var deltaC = (b.getIntersection().charAt(0).charCodeAt(0) - 65) - (a.getIntersection().charAt(0).charCodeAt(0) - 65);
+        var deltaL = b.getIntersection().charAt(1)-a.getIntersection().charAt(1);
+
+        if ( (deltaC == deltaL) || (deltaL == 0 && deltaC != 0 ) || (deltaL != 0 && deltaC == 0 )) {
+
+            if (deltaC > 0) deltaC = 1;
+            if (deltaC < 0) deltaC = -1;
+            if (deltaL > 0) deltaL = 1;
+            if (deltaL < 0) deltaL = -1;
+
+            var i = (a.getIntersection().charAt(0).charCodeAt(0)- 65)+ deltaC;
+            var j = parseInt(a.getIntersection().charAt(1)) + deltaL;
+            var ok = true;
+            while (ok && (i != (b.getIntersection().charAt(0).charCodeAt(0)-65) || j != parseInt(b.getIntersection().charAt(1)))) {
+                var intersection = String.fromCharCode(65+i) + j;
+                if (contentPlateauInitial[intersection].getState() != Lyngk.State.VACANT) ok = false;
+
+                i += deltaC;
+                j += deltaL;
+            }
+        }
+        return ok;
     }
 };

@@ -29,6 +29,7 @@ Lyngk.Intersection = function (c, l) {
 
     this.removePile = function () {
         piecesPosees = [];
+        etat = Lyngk.State.VACANT;
     }
 
     this.getPiecesPosees = function () {
