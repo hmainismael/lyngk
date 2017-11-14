@@ -256,3 +256,21 @@ LyngkTestCase.prototype.testStory19 = function () {
 
     assertEquals(plateau['H5'].getState(), etat);
 }
+
+LyngkTestCase.prototype.testStory20 = function () {
+    var engine = new Lyngk.Engine(),
+        plateau;
+
+    engine.init();
+    plateau = engine.getPlateauInitial();
+
+    engine.move(plateau['B4'], plateau['B3']);
+    engine.move(plateau['B3'], plateau['B2']);
+    engine.move(plateau['B2'], plateau['C2']);
+    engine.move(plateau['C2'], plateau['D2']);
+
+    var etat = plateau['D2'].getHauteur();
+    engine.move(plateau['D2'], plateau['E2']);
+
+    assertEquals(plateau['D2'].getHauteur(), etat);
+}

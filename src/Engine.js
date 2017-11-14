@@ -42,7 +42,8 @@ Lyngk.Engine = function () {
     this.move = function(intersectionDepart, intersectionArrivee) {
         var directionValid = this.checkDirection(intersectionDepart, intersectionArrivee);
         var possibilityMove = this.checkPossibilityMove(intersectionDepart, intersectionArrivee);
-        if(intersectionArrivee.getState() != Lyngk.State.VACANT && directionValid && possibilityMove) {
+        var hauteurPileIsCorrect = this.checkHauteurPileIsCorrect(intersectionDepart, intersectionArrivee);
+        if(intersectionArrivee.getState() != Lyngk.State.VACANT && directionValid && possibilityMove && hauteurPileIsCorrect) {
             for (var i = 0; i < intersectionDepart.getHauteur(); i++) {
                 intersectionArrivee.setPiece(intersectionDepart.getPiecesPosees()[i]);
             }
@@ -90,5 +91,15 @@ Lyngk.Engine = function () {
             }
         }
         return ok;
+    }
+
+    this.checkHauteurPileIsCorrect = function (intersectionDepart, intersectionArrivee) {
+        var coordIntersectionDepart = intersectionDepart.getIntersection().toString();
+        var coordIntersectionArrivee = intersectionArrivee.getIntersection().toString();
+
+        if(contentPlateauInitial[coordIntersectionArrivee].getHauteur() + contentPlateauInitial[coordIntersectionDepart].getHauteur() > 5){
+            return false;
+        }
+        return true;
     }
 };
