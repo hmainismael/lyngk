@@ -303,3 +303,33 @@ LyngkTestCase.prototype.testStory22 = function () {
     assertEquals(plateau['H6'].getState(), etatH6);
     assertEquals(plateau['G6'].getState(), etatG6);
 }
+
+LyngkTestCase.prototype.testStory23 = function () {
+    var engine = new Lyngk.Engine(),
+        plateau,
+        colorsIntersections = [];
+    engine.init();
+    plateau = engine.getPlateauInitial();
+
+    var colorA3 = plateau['A3'].getColor(); colorsIntersections.push(colorA3);
+    var colorB3 = plateau['B3'].getColor(); colorsIntersections.push(colorB3);
+    var colorB4 = plateau['B4'].getColor(); colorsIntersections.push(colorB4);
+    var colorB5 = plateau['B5'].getColor(); colorsIntersections.push(colorB5);
+    var colorC5 = plateau['C5'].getColor(); colorsIntersections.push(colorC5);
+    engine.move(plateau['A3'], plateau['B3']);
+    engine.move(plateau['B3'], plateau['B4']);
+    engine.move(plateau['B4'], plateau['B5']);
+    engine.move(plateau['B5'], plateau['C5']);
+
+    var checkColorsIntersections = [];
+    colorsIntersections.forEach(function(element) {
+        if (checkColorsIntersections.indexOf(element) == -1 && element != Lyngk.Color.WHITE) {
+            checkColorsIntersections.push(element);
+        }
+    });
+
+    if(checkColorsIntersections.length != 0)
+        assertNotEquals(plateau['H6'].getState(), Lyngk.State.FULL_STACK);
+    else
+        assertEquals(plateau['H6'].getState(), Lyngk.State.FULL_STACK);
+}

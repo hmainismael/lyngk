@@ -32,6 +32,7 @@ Lyngk.Engine = function () {
         }
     };
     this.getIndiceTab = function (coordinatesLength) {
+        Math.seedrandom('isidis-i2l');
         return Math.floor((Math.random() * coordinatesLength) + 0);
     };
     this.getPlateauInitial = function () {
