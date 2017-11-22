@@ -109,7 +109,8 @@ Lyngk.Engine = function () {
         var stateCoordIntersectionArrivee = contentPlateau[coordIntersectionArrivee].getHauteur();
 
         var moveImpossibleIfOnePiece = stateCoordIntersectionDepart === 1 && stateCoordIntersectionArrivee > 1;
-        var movePossibleIfTooHigh = stateCoordIntersectionArrivee + stateCoordIntersectionDepart <= 5;
-        return movePossibleIfTooHigh && !moveImpossibleIfOnePiece;
+        var moveImpossiblePieceOnPile = stateCoordIntersectionArrivee + stateCoordIntersectionDepart > 5;
+        var moveImpossibleHigherPile = stateCoordIntersectionArrivee > stateCoordIntersectionDepart;
+        return !moveImpossiblePieceOnPile && !moveImpossibleIfOnePiece && !moveImpossibleHigherPile;
     };
 };
