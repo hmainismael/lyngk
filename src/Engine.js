@@ -105,10 +105,11 @@ Lyngk.Engine = function () {
     this.checkHauteurPileIsCorrect = function (intersectionDepart, intersectionArrivee) {
         var coordIntersectionDepart = intersectionDepart.getIntersection().toString();
         var coordIntersectionArrivee = intersectionArrivee.getIntersection().toString();
+        var stateCoordIntersectionDepart = contentPlateau[coordIntersectionDepart].getHauteur();
+        var stateCoordIntersectionArrivee = contentPlateau[coordIntersectionArrivee].getHauteur();
 
-        if (contentPlateau[coordIntersectionArrivee].getHauteur() + contentPlateau[coordIntersectionDepart].getHauteur() > 5) {
-            return false;
-        }
-        return true;
+        var moveImpossibleIfOnePiece = stateCoordIntersectionDepart === 1 && stateCoordIntersectionArrivee > 1;
+        var movePossibleIfTooHigh = stateCoordIntersectionArrivee + stateCoordIntersectionDepart <= 5;
+        return movePossibleIfTooHigh && !moveImpossibleIfOnePiece;
     };
 };
