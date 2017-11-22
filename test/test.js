@@ -286,3 +286,20 @@ LyngkTestCase.prototype.testStory21 = function () {
     engine.move(plateau['C3'], plateau['B3']);
     assertEquals(plateau['B3'].getState(), etat);
 }
+
+LyngkTestCase.prototype.testStory22 = function () {
+    var engine = new Lyngk.Engine(),
+        plateau;
+    engine.init();
+    plateau = engine.getPlateauInitial();
+    engine.move(plateau['I7'], plateau['H6']);
+    engine.move(plateau['G4'], plateau['G5']);
+    engine.move(plateau['G5'], plateau['G6']);
+
+    var etatH6 = plateau['H6'].getState();
+    var etatG6 = plateau['G6'].getState();
+    engine.move(plateau['H6'], plateau['G6']);
+
+    assertEquals(plateau['H6'].getState(), etatH6);
+    assertEquals(plateau['G6'].getState(), etatG6);
+}

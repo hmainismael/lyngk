@@ -4,12 +4,8 @@
     <option name="ANALYZE_TEST_SOURCES" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f506860d-029c-4c7b-b0ed-d6abeea88d1b" name="Default" comment="testStory20 + solutionStory20">
+    <list default="true" id="f506860d-029c-4c7b-b0ed-d6abeea88d1b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Coordinates.js" afterPath="$PROJECT_DIR$/src/Coordinates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine.js" afterPath="$PROJECT_DIR$/src/Engine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Intersection.js" afterPath="$PROJECT_DIR$/src/Intersection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Piece.js" afterPath="$PROJECT_DIR$/src/Piece.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.js" afterPath="$PROJECT_DIR$/test/test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -58,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/test/test.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="181">
-              <caret line="273" column="49" lean-forward="true" selection-start-line="273" selection-start-column="49" selection-end-line="273" selection-end-column="49" />
+              <caret line="291" column="16" lean-forward="false" selection-start-line="291" selection-start-column="16" selection-end-line="291" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -67,8 +63,8 @@
       <file leaf-file-name="Engine.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="55" lean-forward="true" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+            <state relative-caret-position="1428">
+              <caret line="112" column="66" lean-forward="true" selection-start-line="112" selection-start-column="66" selection-end-line="112" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -150,7 +146,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="width" value="1006" />
+    <option name="width" value="996" />
     <option name="height" value="867" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -376,7 +372,7 @@
       <workItem from="1510646618370" duration="10351000" />
       <workItem from="1510680547140" duration="4915000" />
       <workItem from="1511180068908" duration="352000" />
-      <workItem from="1511356163992" duration="789000" />
+      <workItem from="1511356163992" duration="3741000" />
     </task>
     <task id="LOCAL-00001" summary="testStory1">
       <created>1506687613583</created>
@@ -616,49 +612,63 @@
       <option name="project" value="LOCAL" />
       <updated>1510649330612</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="testStory21">
+      <created>1511356972663</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1511356972663</updated>
+    </task>
+    <task id="LOCAL-00036" summary="solutionStory21">
+      <created>1511358812655</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1511358812655</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests - 2017.11.14 at 19h 39m 51s.xml">
+    <history-entry file="Tests - 2017.11.22 at 14h 25m 42s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.14 at 19h 41m 06s.xml">
+    <history-entry file="Tests - 2017.11.22 at 14h 26m 45s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.14 at 19h 44m 41s.xml">
+    <history-entry file="Tests - 2017.11.22 at 14h 27m 10s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.14 at 19h 46m 23s.xml">
+    <history-entry file="Tests - 2017.11.22 at 14h 31m 55s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.14 at 19h 48m 19s.xml">
+    <history-entry file="Tests - 2017.11.22 at 14h 32m 41s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.14 at 19h 48m 39s.xml">
+    <history-entry file="Tests - 2017.11.22 at 14h 50m 34s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.14 at 19h 48m 47s.xml">
+    <history-entry file="Tests - 2017.11.22 at 14h 51m 38s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.14 at 19h 50m 34s.xml">
+    <history-entry file="Tests - 2017.11.22 at 14h 51m 53s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.14 at 19h 50m 59s.xml">
+    <history-entry file="Tests - 2017.11.22 at 14h 52m 17s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.22 at 14h 16m 51s.xml">
+    <history-entry file="Tests - 2017.11.22 at 15h 14m 32s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87227000" />
+    <option name="totallyTimeSpent" value="90179000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1006" height="867" extended-state="0" />
+    <frame x="-8" y="0" width="996" height="867" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18282828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18469387" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2778506" sideWeight="0.5025" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -711,8 +721,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="testStory6" />
-    <MESSAGE value="testStory6v2 + solutionStory6" />
     <MESSAGE value="testStory7" />
     <MESSAGE value="solutionStory7" />
     <MESSAGE value="testStory8" />
@@ -736,7 +744,9 @@
     <MESSAGE value="testStory19" />
     <MESSAGE value="solutionStory19" />
     <MESSAGE value="testStory20 + solutionStory20" />
-    <option name="LAST_COMMIT_MESSAGE" value="testStory20 + solutionStory20" />
+    <MESSAGE value="testStory21" />
+    <MESSAGE value="solutionStory21" />
+    <option name="LAST_COMMIT_MESSAGE" value="solutionStory21" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -858,14 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Intersection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.jshintrc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -887,10 +889,18 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Intersection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="55" lean-forward="true" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+        <state relative-caret-position="1428">
+          <caret line="112" column="66" lean-forward="true" selection-start-line="112" selection-start-column="66" selection-end-line="112" selection-end-column="66" />
           <folding />
         </state>
       </provider>
@@ -898,7 +908,7 @@
     <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
-          <caret line="273" column="49" lean-forward="true" selection-start-line="273" selection-start-column="49" selection-end-line="273" selection-end-column="49" />
+          <caret line="291" column="16" lean-forward="false" selection-start-line="291" selection-start-column="16" selection-end-line="291" selection-end-column="16" />
           <folding />
         </state>
       </provider>
