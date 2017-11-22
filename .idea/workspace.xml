@@ -4,10 +4,9 @@
     <option name="ANALYZE_TEST_SOURCES" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f506860d-029c-4c7b-b0ed-d6abeea88d1b" name="Default" comment="solutionStory22">
+    <list default="true" id="f506860d-029c-4c7b-b0ed-d6abeea88d1b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine.js" afterPath="$PROJECT_DIR$/src/Engine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.js" afterPath="$PROJECT_DIR$/test/test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,8 +33,8 @@
       <file leaf-file-name="Intersection.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Intersection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+            <state relative-caret-position="-15">
+              <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -51,21 +50,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="316" column="61" lean-forward="false" selection-start-line="316" selection-start-column="61" selection-end-line="316" selection-end-column="61" />
+            <state relative-caret-position="384">
+              <caret line="326" column="51" lean-forward="true" selection-start-line="326" selection-start-column="51" selection-end-line="326" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Engine.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Engine.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Engine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            <state relative-caret-position="1185">
+              <caret line="121" column="43" lean-forward="true" selection-start-line="121" selection-start-column="43" selection-end-line="121" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -139,8 +138,8 @@
         <option value="$PROJECT_DIR$/src/Coordinates.js" />
         <option value="$PROJECT_DIR$/.jshintrc.js" />
         <option value="$PROJECT_DIR$/src/Intersection.js" />
-        <option value="$PROJECT_DIR$/src/Engine.js" />
         <option value="$PROJECT_DIR$/test/test.js" />
+        <option value="$PROJECT_DIR$/src/Engine.js" />
       </list>
     </option>
   </component>
@@ -254,6 +253,16 @@
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
     </configuration>
+    <configuration name="LyngkTestCase.testStory23" type="JsTestDriver-test-runner" factoryName="JsTestDriver" temporary="true">
+      <setting name="configLocationType" value="TEST_METHOD" />
+      <setting name="configType" value="FILE_PATH" />
+      <setting name="settingsFile" value="$PROJECT_DIR$/jsTestDriver.conf" />
+      <setting name="jsFile" value="$PROJECT_DIR$/test/test.js" />
+      <setting name="testCase" value="LyngkTestCase" />
+      <setting name="testMethod" value="testStory23" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+    </configuration>
     <configuration name="Tests" type="JsTestDriver-test-runner" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="$PROJECT_DIR$/jsTestDriver.conf" />
@@ -333,15 +342,17 @@
       <method />
     </configuration>
     <configuration name="test.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="test.js" working-dir="$PROJECT_DIR$/test" />
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JsTestDriver.Tests" />
       <item index="1" class="java.lang.String" itemvalue="Node.js.test.js" />
       <item index="2" class="java.lang.String" itemvalue="JsTestDriver.LyngkTestCase.testStory20" />
+      <item index="3" class="java.lang.String" itemvalue="JsTestDriver.LyngkTestCase.testStory23" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JsTestDriver.LyngkTestCase.testStory20" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.test.js" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="JsTestDriver.LyngkTestCase.testStory23" />
+        <item index="1" class="java.lang.String" itemvalue="JsTestDriver.LyngkTestCase.testStory20" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.test.js" />
       </list>
     </recent_temporary>
   </component>
@@ -379,7 +390,7 @@
       <workItem from="1510680547140" duration="4915000" />
       <workItem from="1511180068908" duration="352000" />
       <workItem from="1511356163992" duration="3933000" />
-      <workItem from="1511371511733" duration="5594000" />
+      <workItem from="1511371511733" duration="8330000" />
     </task>
     <task id="LOCAL-00001" summary="testStory1">
       <created>1506687613583</created>
@@ -647,43 +658,50 @@
       <option name="project" value="LOCAL" />
       <updated>1511372401578</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="testStory23 (+ add function MathSeedRandom)">
+      <created>1511377157928</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1511377157928</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests - 2017.11.22 at 19h 46m 40s.xml">
+    <history-entry file="LyngkTestCase_testStory23 - 2017.11.22 at 20h 17m 34s.xml">
+      <configuration name="LyngkTestCase.testStory23" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
+    <history-entry file="LyngkTestCase_testStory23 - 2017.11.22 at 20h 17m 47s.xml">
+      <configuration name="LyngkTestCase.testStory23" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
+    <history-entry file="LyngkTestCase_testStory23 - 2017.11.22 at 20h 17m 58s.xml">
+      <configuration name="LyngkTestCase.testStory23" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
+    <history-entry file="LyngkTestCase_testStory23 - 2017.11.22 at 20h 20m 46s.xml">
+      <configuration name="LyngkTestCase.testStory23" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
+    <history-entry file="Tests - 2017.11.22 at 20h 20m 52s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.22 at 19h 46m 58s.xml">
+    <history-entry file="Tests - 2017.11.22 at 20h 21m 09s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.22 at 19h 49m 06s.xml">
+    <history-entry file="Tests - 2017.11.22 at 20h 40m 55s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.22 at 19h 50m 35s.xml">
+    <history-entry file="Tests - 2017.11.22 at 20h 42m 38s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.22 at 19h 50m 49s.xml">
+    <history-entry file="Tests - 2017.11.22 at 20h 43m 27s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
-    <history-entry file="Tests - 2017.11.22 at 19h 51m 37s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
-    <history-entry file="Tests - 2017.11.22 at 19h 54m 22s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
-    <history-entry file="Tests - 2017.11.22 at 19h 55m 19s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
-    <history-entry file="Tests - 2017.11.22 at 19h 56m 44s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
-    <history-entry file="Tests - 2017.11.22 at 19h 57m 25s.xml">
+    <history-entry file="Tests - 2017.11.22 at 20h 43m 48s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95965000" />
+    <option name="totallyTimeSpent" value="98701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1121" height="867" extended-state="0" />
@@ -694,7 +712,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2778506" sideWeight="0.5025" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19098143" sideWeight="0.4975" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2254642" sideWeight="0.4975" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327654" sideWeight="0.4975" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -742,8 +760,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="testStory8" />
-    <MESSAGE value="solutionStory8" />
     <MESSAGE value="testStory8 + solutionStory8" />
     <MESSAGE value="testStory9 + solutionStory9" />
     <MESSAGE value="testStory11" />
@@ -767,7 +783,9 @@
     <MESSAGE value="solutionStory21" />
     <MESSAGE value="testStory22" />
     <MESSAGE value="solutionStory22" />
-    <option name="LAST_COMMIT_MESSAGE" value="solutionStory22" />
+    <MESSAGE value="testStory23" />
+    <MESSAGE value="testStory23 (+ add function MathSeedRandom)" />
+    <option name="LAST_COMMIT_MESSAGE" value="testStory23 (+ add function MathSeedRandom)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -886,14 +904,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Intersection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Lyngk.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -918,18 +928,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine.js">
+    <entry file="file://$PROJECT_DIR$/src/Intersection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="-15">
+          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="316" column="61" lean-forward="false" selection-start-line="316" selection-start-column="61" selection-end-line="316" selection-end-column="61" />
+        <state relative-caret-position="384">
+          <caret line="326" column="51" lean-forward="true" selection-start-line="326" selection-start-column="51" selection-end-line="326" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="121" column="43" lean-forward="true" selection-start-line="121" selection-start-column="43" selection-end-line="121" selection-end-column="43" />
           <folding />
         </state>
       </provider>

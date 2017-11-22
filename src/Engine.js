@@ -43,8 +43,9 @@ Lyngk.Engine = function () {
             directionValid = this.checkDirection(intersectionDepart, intersectionArrivee),
             possibilityMove = this.checkPossibilityMove(intersectionDepart, intersectionArrivee),
             hauteurPileIsCorrect = this.checkHauteurPileIsCorrect(intersectionDepart, intersectionArrivee),
-            intersectionArriveeIsEmpty = this.checkArrivalCoordinateNotEmpty(intersectionArrivee);
-        if (intersectionArriveeIsEmpty && directionValid && possibilityMove && hauteurPileIsCorrect) {
+            intersectionArriveeIsEmpty = this.checkArrivalCoordinateNotEmpty(intersectionArrivee),
+            notRepeatedColors = this.checkRepeatedColorsPile(intersectionDepart, intersectionArrivee);
+        if (intersectionArriveeIsEmpty && directionValid && possibilityMove && hauteurPileIsCorrect && notRepeatedColors) {
             for (i = 0; i < intersectionDepart.getHauteur(); i += 1) {
                 intersectionArrivee.setPiece(intersectionDepart.getPiecesPosees()[i]);
             }
@@ -113,5 +114,26 @@ Lyngk.Engine = function () {
         var moveImpossiblePieceOnPile = stateCoordIntersectionArrivee + stateCoordIntersectionDepart > 5;
         var moveImpossibleHigherPile = stateCoordIntersectionArrivee > stateCoordIntersectionDepart;
         return !moveImpossiblePieceOnPile && !moveImpossibleIfOnePiece && !moveImpossibleHigherPile;
+    };
+    this.checkRepeatedColorsPile = function (intersectionDepart, intersectionArrivee) {
+        var colorsDepart = [], colorsArrivee = [];
+        intersectionDepart.getPiecesPosees().forEach(function(element) {
+            if (element !== Lyngk.Color.WHITE) {
+                colorsDepart.push(element);
+            }
+        });
+        intersectionArrivee.getPiecesPosees().forEach(function(element) {
+            if (element !== Lyngk.Color.WHITE) {
+                colorsArrivee.push(element);
+            }
+        });
+
+        var colorsDuplicated = [];
+        colorsDepart.forEach(function (element) {
+            if (colorsArrivee.indexOf(element) > -1) {
+                colorsDuplicated.push(element);
+            }
+        });
+        return colorsDuplicated.length === 0;
     };
 };
