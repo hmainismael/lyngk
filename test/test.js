@@ -168,7 +168,7 @@ LyngkTestCase.prototype.testStory14 = function () {
 
     var keysPlateau = Object.keys(plateau);
     for(var i in keysPlateau){
-        assertEquals(plateau[keysPlateau[i]].getHauteur(), 1);
+        assertEquals(plateau[keysPlateau[i]].getState(), Lyngk.State.ONE_PIECE);
         couleurPile[keysPlateau[i]] = plateau[keysPlateau[i]].getColor();
     }
 
@@ -187,8 +187,8 @@ LyngkTestCase.prototype.testStory15 = function () {
     var couleurA3 = plateau['A3'].getColor();
     engine.move(plateau['A3'],plateau['B3']);
 
-    assertEquals(plateau['A3'].getHauteur(), 0);
-    assertEquals(plateau['B3'].getHauteur(), 2);
+    assertEquals(plateau['A3'].getState(), Lyngk.State.VACANT);
+    assertEquals(plateau['B3'].getState(), Lyngk.State.STACK);
     assertEquals(plateau['B3'].getColor(), couleurA3);
 }
 
@@ -203,7 +203,7 @@ LyngkTestCase.prototype.testStory16 = function () {
     var couleurB3 = plateau['B3'].getColor();
     engine.move(plateau['B3'], plateau['B2']);
 
-    assertEquals(plateau['B3'].getHauteur(), 0);
+    assertEquals(plateau['B3'].getState(), Lyngk.State.VACANT);
     assertEquals(plateau['B2'].getHauteur(), 3);
     assertEquals(plateau['B2'].getColor(), couleurB3);
 }
@@ -216,12 +216,12 @@ LyngkTestCase.prototype.testStory17 = function () {
     plateau = engine.getPlateauInitial();
 
     engine.move(plateau['B2'], plateau['B3']);
-    assertEquals(plateau['B2'].getHauteur(), 0);
-    assertEquals(plateau['B3'].getHauteur(), 2);
+    assertEquals(plateau['B2'].getState(), Lyngk.State.VACANT);
+    assertEquals(plateau['B3'].getState(), Lyngk.State.STACK);
 
     engine.move(plateau['B3'], plateau['B2']);
-    assertEquals(plateau['B2'].getHauteur(), 0);
-    assertEquals(plateau['B3'].getHauteur(), 2);
+    assertEquals(plateau['B2'].getState(), Lyngk.State.VACANT);
+    assertEquals(plateau['B3'].getState(), Lyngk.State.STACK);
 }
 
 LyngkTestCase.prototype.testStory18 = function () {
@@ -231,12 +231,12 @@ LyngkTestCase.prototype.testStory18 = function () {
     engine.init();
     plateau = engine.getPlateauInitial();
 
-    var etatB3 = plateau['B3'].getHauteur();
-    var etatC2 = plateau['C2'].getHauteur();
+    var etatB3 = plateau['B3'].getState();
+    var etatC2 = plateau['C2'].getState();
 
     engine.move(plateau['B3'], plateau['C2']);
-    assertEquals(plateau['C2'].getHauteur(), etatC2);
-    assertEquals(plateau['B3'].getHauteur(), etatB3);
+    assertEquals(plateau['C2'].getState(), etatC2);
+    assertEquals(plateau['B3'].getState(), etatB3);
 }
 
 LyngkTestCase.prototype.testStory19 = function () {
@@ -266,11 +266,23 @@ LyngkTestCase.prototype.testStory20 = function () {
 
     engine.move(plateau['B4'], plateau['B3']);
     engine.move(plateau['B3'], plateau['B2']);
-    engine.move(plateau['B2'], plateau['C2']);
-    engine.move(plateau['C2'], plateau['D2']);
+    engine.move(plateau['B2'], plateau['C3']);
+    engine.move(plateau['C3'], plateau['D3']);
 
-    var etat = plateau['D2'].getHauteur();
-    engine.move(plateau['D2'], plateau['E2']);
+    var etat = plateau['D3'].getState();
+    engine.move(plateau['D3'], plateau['E3']);
+    assertEquals(plateau['D3'].getState(), etat);
+}
 
-    assertEquals(plateau['D2'].getHauteur(), etat);
+LyngkTestCase.prototype.testStory21 = function () {
+    var engine = new Lyngk.Engine(),
+        plateau;
+
+    engine.init();
+    plateau = engine.getPlateauInitial();
+
+    engine.move(plateau['A3'], plateau['B3']);
+    var etat = plateau['B3'].getState();
+    engine.move(plateau['C3'], plateau['B3']);
+    assertEquals(plateau['B3'].getState(), etat);
 }

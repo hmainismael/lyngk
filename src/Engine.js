@@ -4,8 +4,7 @@
 Lyngk.Color = {BLACK: 0, IVORY: 1, BLUE: 2, RED: 3, GREEN: 4, WHITE: 5};
 
 Lyngk.Engine = function () {
-
-    var contentPlateauInitial = {};
+    var contentPlateau = {};
 
     this.init = function () {
         var i,
@@ -14,92 +13,102 @@ Lyngk.Engine = function () {
             coordinate = new Lyngk.Coordinates(''),
             coordinatesValid = coordinate.getValidCoordinates(),
             nbCoordinatesValid = coordinatesValid.length,
+            nbRepeatedColors,
             colors = [Lyngk.Color.BLACK, Lyngk.Color.IVORY, Lyngk.Color.BLUE, Lyngk.Color.RED, Lyngk.Color.GREEN, Lyngk.Color.WHITE];
-
-        for (i = 0; i < colors.length; i++) {
-            var nbRepeatedColors = 0;
+        for (i = 0; i < colors.length; i += 1) {
+            nbRepeatedColors = 0;
             while (nbRepeatedColors < 8 && nbIntersectionsRemplis < nbCoordinatesValid) {
-                var coordinatesSplicedLength = coordinatesValid.length,
-                    indiceTab = Math.floor((Math.random() * coordinatesSplicedLength) + 0),
-                    c = coordinatesValid[indiceTab].charAt(0),
-                    l = coordinatesValid[indiceTab].charAt(1),
-                    intersection = new Lyngk.Intersection(c, l);
-
+                var indiceTab = this.getIndiceTab(coordinatesValid.length),
+                    colonne = coordinatesValid[indiceTab].charAt(0),
+                    ligne = coordinatesValid[indiceTab].charAt(1),
+                    intersection = new Lyngk.Intersection(colonne, ligne);
                 intersection.setPiece(new Lyngk.Piece(colors[j]));
-                contentPlateauInitial[coordinatesValid[indiceTab]] = intersection;
-                nbRepeatedColors++;
-                nbIntersectionsRemplis++;
+                contentPlateau[coordinatesValid[indiceTab]] = intersection;
+                nbRepeatedColors += 1;
+                nbIntersectionsRemplis += 1;
                 coordinatesValid.splice(indiceTab, 1);
             }
-            j++;
+            j += 1;
         }
-    }
-
+    };
+    this.getIndiceTab = function (coordinatesLength) {
+        return Math.floor((Math.random() * coordinatesLength) + 0);
+    };
     this.getPlateauInitial = function () {
-        return contentPlateauInitial;
-    }
-
-    this.move = function(intersectionDepart, intersectionArrivee) {
-        var directionValid = this.checkDirection(intersectionDepart, intersectionArrivee);
-        var possibilityMove = this.checkPossibilityMove(intersectionDepart, intersectionArrivee);
-        var hauteurPileIsCorrect = this.checkHauteurPileIsCorrect(intersectionDepart, intersectionArrivee);
-        if(intersectionArrivee.getState() != Lyngk.State.VACANT && directionValid && possibilityMove && hauteurPileIsCorrect) {
-            for (var i = 0; i < intersectionDepart.getHauteur(); i++) {
+        return contentPlateau;
+    };
+    this.move = function (intersectionDepart, intersectionArrivee) {
+        var i,
+            directionValid = this.checkDirection(intersectionDepart, intersectionArrivee),
+            possibilityMove = this.checkPossibilityMove(intersectionDepart, intersectionArrivee),
+            hauteurPileIsCorrect = this.checkHauteurPileIsCorrect(intersectionDepart, intersectionArrivee),
+            intersectionArriveeIsEmpty = this.checkArrivalCoordinateNotEmpty(intersectionArrivee);
+        if (intersectionArriveeIsEmpty && directionValid && possibilityMove && hauteurPileIsCorrect) {
+            for (i = 0; i < intersectionDepart.getHauteur(); i += 1) {
                 intersectionArrivee.setPiece(intersectionDepart.getPiecesPosees()[i]);
             }
             intersectionDepart.removePile();
         }
-    }
-
-    this.checkDirection = function(intersectionDepart, intersectionArrivee) {
+    };
+    this.checkArrivalCoordinateNotEmpty = function (intersectionArrivee) {
+        return intersectionArrivee.getState() !== Lyngk.State.VACANT;
+    };
+    this.checkDirection = function (intersectionDepart, intersectionArrivee) {
         var colonneIntersectionDepart = intersectionDepart.getIntersection().charAt(0);
         var ligneIntersectionDepart = intersectionDepart.getIntersection().charAt(1);
 
         var colonneIntersectionArrivee = intersectionArrivee.getIntersection().charAt(0);
         var ligneIntersectionArrivee = intersectionArrivee.getIntersection().charAt(1);
 
-        var temp = colonneIntersectionArrivee.charCodeAt(0) - colonneIntersectionDepart.charCodeAt(0);
-        var temp2 = ligneIntersectionArrivee - ligneIntersectionDepart;
+        var deltaColonne = colonneIntersectionArrivee.charCodeAt(0) - colonneIntersectionDepart.charCodeAt(0);
+        var deltaLigne = ligneIntersectionArrivee - ligneIntersectionDepart;
 
-        if(temp == temp2 || colonneIntersectionDepart == colonneIntersectionArrivee || ligneIntersectionArrivee == ligneIntersectionDepart){
-            return true;
-        } else {
-            return false;
-        }
-    }
-
+        return deltaColonne === deltaLigne || colonneIntersectionDepart === colonneIntersectionArrivee || ligneIntersectionArrivee === ligneIntersectionDepart;
+    };
     this.checkPossibilityMove = function (a, b) {
-        var deltaC = (b.getIntersection().charAt(0).charCodeAt(0) - 65) - (a.getIntersection().charAt(0).charCodeAt(0) - 65);
-        var deltaL = b.getIntersection().charAt(1)-a.getIntersection().charAt(1);
-
-        if ( (deltaC == deltaL) || (deltaL == 0 && deltaC != 0 ) || (deltaL != 0 && deltaC == 0 )) {
-
-            if (deltaC > 0) deltaC = 1;
-            if (deltaC < 0) deltaC = -1;
-            if (deltaL > 0) deltaL = 1;
-            if (deltaL < 0) deltaL = -1;
-
-            var i = (a.getIntersection().charAt(0).charCodeAt(0)- 65)+ deltaC;
-            var j = parseInt(a.getIntersection().charAt(1)) + deltaL;
-            var ok = true;
-            while (ok && (i != (b.getIntersection().charAt(0).charCodeAt(0)-65) || j != parseInt(b.getIntersection().charAt(1)))) {
-                var intersection = String.fromCharCode(65+i) + j;
-                if (contentPlateauInitial[intersection].getState() != Lyngk.State.VACANT) ok = false;
-
+        var deltaC = this.getValueAsciiColonne(b) - this.getValueAsciiColonne(a);
+        var deltaL = this.getLigneOfIntersection(b) - this.getLigneOfIntersection(a);
+        if (this.checkDeltaIsValid(deltaC, deltaL)) {
+            deltaC = this.getValueDelta(deltaC);
+            deltaL = this.getValueDelta(deltaL);
+            var i = this.getValueAsciiColonne(a) + deltaC,
+                j = this.getLigneOfIntersection(a) + deltaL;
+            while (i !== this.getValueAsciiColonne(b) || j !== this.getLigneOfIntersection(b)) {
+                if (this.checkArrivalCoordinateNotEmpty(contentPlateau[String.fromCharCode(65 + i) + j])) {
+                    return false;
+                }
                 i += deltaC;
                 j += deltaL;
             }
         }
-        return ok;
-    }
-
+        return true;
+    };
+    this.getValueAsciiColonne = function (coordonnee) {
+        return (coordonnee.getIntersection().charAt(0).charCodeAt(0)) - 65;
+    };
+    this.getLigneOfIntersection = function (coordonnee) {
+        return parseInt(coordonnee.getIntersection().charAt(1));
+    };
+    this.checkDeltaIsValid = function (deltaC, deltaL) {
+        return (deltaC === deltaL) || (deltaL === 0 && deltaC !== 0) || (deltaL !== 0 && deltaC === 0);
+    };
+    this.getValueDelta = function (delta) {
+        if (delta > 0) {
+            delta = 1;
+        } else if (delta < 0) {
+            delta = -1;
+        } else {
+            delta = 0;
+        }
+        return delta;
+    };
     this.checkHauteurPileIsCorrect = function (intersectionDepart, intersectionArrivee) {
         var coordIntersectionDepart = intersectionDepart.getIntersection().toString();
         var coordIntersectionArrivee = intersectionArrivee.getIntersection().toString();
 
-        if(contentPlateauInitial[coordIntersectionArrivee].getHauteur() + contentPlateauInitial[coordIntersectionDepart].getHauteur() > 5){
+        if (contentPlateau[coordIntersectionArrivee].getHauteur() + contentPlateau[coordIntersectionDepart].getHauteur() > 5) {
             return false;
         }
         return true;
-    }
+    };
 };

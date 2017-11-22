@@ -6,35 +6,35 @@ Lyngk.Coordinates = function (c, l) {
     var coordinatesToTest = c.toUpperCase() + l;
 
     this.is_valid = function () {
-        if (typeof (coordinatesToTest) === 'string') {
-            if (validCoordinates.indexOf(coordinatesToTest) == -1)
+        if (typeof(coordinatesToTest) === 'string') {
+            if (validCoordinates.indexOf(coordinatesToTest) === -1) {
                 return false;
-            else
-                return true;
+            }
+            return true;
         }
-    }
+    };
 
     this.is_string = function () {
-        if (typeof (coordinatesToTest) === 'string') {
+        if (typeof(coordinatesToTest) === 'string') {
             return coordinatesToTest;
         } else {
             return 'invalid';
         }
-    }
+    };
 
     this.clone = function () {
-        return new Lyngk.Coordinates(c,l);
-    }
+        return new Lyngk.Coordinates(c, l);
+    };
 
     this.hash = function () {
         return validCoordinates.indexOf(coordinatesToTest);
-    }
+    };
 
     this.getValidCoordinates = function () {
         return validCoordinates;
-    }
+    };
 
-    this.toString = function() {
+    this.toString = function () {
         return coordinatesToTest;
-    }
+    };
 };
