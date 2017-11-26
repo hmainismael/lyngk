@@ -338,3 +338,13 @@ LyngkTestCase.prototype.testStory24 = function () {
     var engine = new Lyngk.Engine();
     assertEquals(engine.getCurrentPlayer(), Lyngk.Player.ONE);
 }
+
+LyngkTestCase.prototype.testStory25 = function () {
+    var engine = new Lyngk.Engine();
+    engine.init();
+    var plateau = engine.getPlateauInitial();
+
+    assertEquals(engine.getCurrentPlayer(), Lyngk.Player.ONE);
+    engine.move(plateau['A3'], plateau['B3']);
+    assertEquals(engine.getCurrentPlayer(), Lyngk.Player.TWO);
+}
