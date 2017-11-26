@@ -5,8 +5,10 @@ Lyngk.Color = {BLACK: 0, IVORY: 1, BLUE: 2, RED: 3, GREEN: 4, WHITE: 5};
 Lyngk.Player = {ONE: 1, TWO: 2};
 
 Lyngk.Engine = function () {
-    var contentPlateau = {};
-    var currentPlayer = Lyngk.Player.ONE;
+    var contentPlateau = {},
+        currentPlayer = Lyngk.Player.ONE,
+        colorsClaimedByPlayerOne = [],
+        colorsClaimedByPlayerTwo = [];
 
     this.init = function () {
         var i,
@@ -148,5 +150,28 @@ Lyngk.Engine = function () {
         } else {
             currentPlayer = Lyngk.Player.ONE;
         }
+    };
+    this.claimColor = function (player, color) {
+        var playerIsValid = this.checkPlayerPlaying(player);
+        if(!playerIsValid) {
+            return false;
+        } else {
+            var colorClaimedIsAvailable = this.checkColorIsAvailable(color);
+            if(!colorClaimedIsAvailable){
+                return false;
+            } else {
+                if(player === Lyngk.Player.ONE) {
+                    return colorsClaimedByPlayerOne.push(color) > 0;
+                } else {
+                    return colorsClaimedByPlayerTwo.push(color) > 0;
+                }
+            }
+        }
+    };
+    this.checkPlayerPlaying = function (player) {
+        return player === currentPlayer;
+    };
+    this.checkColorIsAvailable = function (color) {
+        return colorsClaimedByPlayerOne.indexOf(color) === -1 && colorsClaimedByPlayerTwo.indexOf(color) === -1;
     };
 };
