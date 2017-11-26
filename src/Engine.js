@@ -174,4 +174,6 @@ Lyngk.Engine = function () {
     this.checkColorIsAvailable = function (color) {
         return colorsClaimedByPlayerOne.indexOf(color) === -1 && colorsClaimedByPlayerTwo.indexOf(color) === -1;
     };
+
+    this.init();
 };
