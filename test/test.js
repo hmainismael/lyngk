@@ -348,3 +348,16 @@ LyngkTestCase.prototype.testStory25 = function () {
     engine.move(plateau['A3'], plateau['B3']);
     assertEquals(engine.getCurrentPlayer(), Lyngk.Player.TWO);
 }
+
+LyngkTestCase.prototype.testStory26 = function () {
+    var engine = new Lyngk.Engine();
+    engine.init();
+    var plateau = engine.getPlateauInitial();
+
+    assertTrue(engine.claimColor(Lyngk.Player.ONE, Lyngk.Color.RED));
+    engine.move(plateau['A3'], plateau['B3']);
+    assertTrue(engine.claimColor(Lyngk.Player.TWO, Lyngk.Color.GREEN));
+
+    assertFalse(engine.claimColor(Lyngk.Player.TWO, Lyngk.Color.RED));
+    assertFalse(engine.claimColor(Lyngk.Player.ONE, Lyngk.Color.GREEN));
+}
