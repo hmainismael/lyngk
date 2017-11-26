@@ -52,6 +52,7 @@ Lyngk.Engine = function () {
                 intersectionArrivee.setPiece(intersectionDepart.getPiecesPosees()[i]);
             }
             intersectionDepart.removePile();
+            this.changePlayer();
         }
     };
     this.checkArrivalCoordinateNotEmpty = function (intersectionArrivee) {
@@ -140,5 +141,12 @@ Lyngk.Engine = function () {
     };
     this.getCurrentPlayer = function () {
         return currentPlayer;
+    };
+    this.changePlayer = function () {
+        if(currentPlayer === Lyngk.Player.ONE) {
+            currentPlayer = Lyngk.Player.TWO;
+        } else {
+            currentPlayer = Lyngk.Player.ONE;
+        }
     };
 };
