@@ -333,3 +333,8 @@ LyngkTestCase.prototype.testStory23 = function () {
     else
         assertEquals(plateau['H6'].getState(), Lyngk.State.FULL_STACK);
 }
+
+LyngkTestCase.prototype.testStory24 = function () {
+    var engine = new Lyngk.Engine();
+    assertEquals(engine.getCurrentPlayer(), Lyngk.Player.ONE);
+}
