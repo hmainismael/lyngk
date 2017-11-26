@@ -8,7 +8,9 @@ Lyngk.Engine = function () {
     var contentPlateau = {},
         currentPlayer = Lyngk.Player.ONE,
         colorsClaimedByPlayerOne = [],
-        colorsClaimedByPlayerTwo = [];
+        colorsClaimedByPlayerTwo = [],
+        pointsPlayerOne = 0,
+        pointsPlayerTwo = 0;
 
     this.init = function () {
         var i,
@@ -54,6 +56,8 @@ Lyngk.Engine = function () {
                 intersectionArrivee.setPiece(intersectionDepart.getPiecesPosees()[i]);
             }
             intersectionDepart.removePile();
+
+            this.checkIfPlayerScorePoint(intersectionArrivee);
             this.changePlayer();
         }
     };
@@ -173,6 +177,38 @@ Lyngk.Engine = function () {
     };
     this.checkColorIsAvailable = function (color) {
         return colorsClaimedByPlayerOne.indexOf(color) === -1 && colorsClaimedByPlayerTwo.indexOf(color) === -1;
+    };
+    this.checkIfPlayerScorePoint = function (intersectionArrivee) {
+        if(intersectionArrivee.getHauteur()  === 5){
+            if(currentPlayer === Lyngk.Player.ONE){
+                if(colorsClaimedByPlayerOne.indexOf(intersectionArrivee.getColor()) != -1){
+                    intersectionArrivee.removePile();
+                    pointsPlayerOne ++;
+                }
+            } else {
+                if(colorsClaimedByPlayerTwo.indexOf(intersectionArrivee.getColor()) != -1){
+                    intersectionArrivee.removePile();
+                    pointsPlayerTwo ++;
+                }
+            }
+        }
+    };
+    this.getNbPointsOfPlayer = function (player) {
+        if(player === Lyngk.Player.ONE) {
+            return pointsPlayerOne;
+        } else {
+            return pointsPlayerTwo;
+        }
+    };
+    this.getNbPiecesOnGame = function () {
+        var coordinate = new Lyngk.Coordinates(''),
+            coordinatesValid = coordinate.getValidCoordinates(),
+            nbCoordinatesValid = coordinatesValid.length,
+            i, nbPiecesOnGame = 0;
+        for (i = 0; i < nbCoordinatesValid; i += 1) {
+            nbPiecesOnGame += contentPlateau[coordinatesValid[i]].getHauteur();
+        }
+        return nbPiecesOnGame;
     };
 
     this.init();
